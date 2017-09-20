@@ -95,73 +95,47 @@ $(document).ready(function(evt) {
 
   console.log('Animations Boilerplate is a go.');
 
-// scrolling function starts
-	// jQuery(document).ready(function() {
-	//     jQuery('.site').addClass("animateHidden").viewportChecker({
-	//         classToAdd: 'animateVisible animated fadeIn',
-	//         offset: 100
-	//        });
-	// });
-// scrolling functions ends
-
-
-
 	$('.hamburger').on('click', function (e) {
 	  	e.preventDefault();
-
-	  
 
 		if ($("nav.active")[0]){
 			$('.hamburger').toggleClass('activeX');
 			$('.content').removeClass('slidingContent');
 			$('nav').slideUp(300, function(){
-				$(this).removeClass('active').css('display','');
-				
+				$(this).removeClass('active').css('display','');	
 			});
 		} else {
 			$('.hamburger').toggleClass('activeX');
 			$('.content').addClass('slidingContent');
 		 	$('nav').slideDown(300, function(){
-				$(this).addClass('active');
-				
+				$(this).addClass('active');	
 			});
 		}
-
-
 	});
 
 
 	$('.expand').on('click', function (e) {
 	  e.preventDefault();
-	  		$(this).children('.line').toggleClass('active');
-
-			    $(this).parent('.menuCategory').siblings('.menuItems').slideToggle('showItems')
-
-
+	  	$(this).children('.line').toggleClass('active');
+		$(this).parent('.menuCategory').siblings('.menuItems').slideToggle('showItems')
 	});
 
-
-
-
 	$('.arrow-right').on('click', function(e) {
-
 		nextSlide();
 	    $('.pawRight').addClass("pawIn").delay(300).queue(function(next){
-	    		$(this).removeClass("pawIn");
+	    	$(this).removeClass("pawIn");
 	    	next();
-		});
-		
+		});		
 	});
 
 
 	$('.arrow-left').on('click', function(e) {
-
 		prevSlide();
 		// $('.slide2').addClass('sliderRight');
 		// // $('.slide2').addClass('slideAppear');
 		// $('.bannerBg2').addClass('sliderRight');
 		$('.pawLeft').addClass("pawIn").delay(300).queue(function(next){
-	    		$(this).removeClass("pawIn");
+	    	$(this).removeClass("pawIn");
 	    	next();
 		});
 	});
@@ -190,9 +164,5 @@ $(document).ready(function(evt) {
 
 	// END SLIDER ARROWS
 
-
-
-
-	
 
 });
